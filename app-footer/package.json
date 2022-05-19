@@ -1,7 +1,7 @@
 {
-  "name": "@shoppe/app-shop",
+  "name": "@shoppe/app-footer",
   "scripts": {
-    "start": "webpack serve --port 8500",
+    "start": "webpack serve --port 8110",
     "start:standalone": "webpack serve --env standalone",
     "build": "concurrently yarn:build:*",
     "build:webpack": "webpack --mode=production",
@@ -11,6 +11,7 @@
     "check-format": "prettier --check .",
     "test": "cross-env BABEL_ENV=test jest",
     "watch-tests": "cross-env BABEL_ENV=test jest --watch",
+    "prepare": "husky install",
     "coverage": "cross-env BABEL_ENV=test jest --coverage",
     "build:types": "tsc"
   },
@@ -59,5 +60,5 @@
     "@types/react": "^17.0.19",
     "@types/react-dom": "^17.0.9"
   },
-  "types": "dist/shoppe-app-shop.d.ts"
+  "types": "dist/shoppe-app-footer.d.ts"
 }

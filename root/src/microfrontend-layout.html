@@ -16,10 +16,15 @@
   </route>
 
   -->
-
+  <header>
+    <application name="@shoppe/app-header"></application>
+  </header>
   <main>
-    <route default>
-      <application name="@single-spa/welcome"></application>
+    <route path="app1">
+      <application name="@shoppe/app-shop"></application>
     </route>
   </main>
+  <footer>
+    <application name="@shoppe/app-footer"></application>
+  </footer>
 </single-spa-router>
