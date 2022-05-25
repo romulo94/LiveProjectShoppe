@@ -1,7 +1,7 @@
 {
   "name": "@shoppe/app-cart",
   "scripts": {
-    "start": "webpack serve",
+    "start": "webpack serve --port 8320",
     "start:standalone": "webpack serve --env standalone",
     "build": "concurrently yarn:build:*",
     "build:webpack": "webpack --mode=production",

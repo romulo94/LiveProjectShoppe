@@ -1,7 +1,7 @@
 {
   "name": "@shoppe/app-shop",
   "scripts": {
-    "start": "webpack serve --port 8500",
+    "start": "webpack serve --port 8300",
     "start:standalone": "webpack serve --env standalone",
     "build": "concurrently yarn:build:*",
     "build:webpack": "webpack --mode=production",
