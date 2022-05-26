@@ -1,3 +1,12 @@
+// @ts-ignore
+import { useStore } from "@shoppe/util-state";
+
 export default function Root(props) {
-  return <section>{props.name} is mounted!</section>;
+  const store = useStore();
+  return (
+    <section>
+      <h1>Product!!!</h1>
+      <button onClick={store.decrement}>Decrement</button>
+    </section>
+  );
 }
