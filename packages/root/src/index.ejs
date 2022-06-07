@@ -17,10 +17,10 @@
     This CSP allows any SSL-enabled host and for arbitrary eval(), but you should limit these directives further to increase your app's security.
     Learn more about CSP policies at https://content-security-policy.com/#directive
   -->
-    <meta
+    <!-- <meta
       http-equiv="Content-Security-Policy"
-      content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';"
-    />
+      content="default-src *; script-src  * 'unsafe-inline' 'unsafe-eval' blob: https: localhost:* http: localhost:*; connect-src https: localhost:* http: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src *"
+    /> -->
     <meta name="importmap-type" content="systemjs-importmap" />
     <!-- If you wish to turn off import-map-overrides for specific environments (prod), uncomment the line below -->
     <!-- More info at https://github.com/joeldenning/import-map-overrides/blob/master/docs/configuration.md#domain-list -->
@@ -50,6 +50,24 @@
       href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js"
       as="script"
     />
+
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+    />
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
+      rel="stylesheet"
+    />
+
+    <link href="./style.css" rel="stylesheet" />
 
     <!-- Add your organization's prod import map URL to this script's src  -->
     <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
@@ -88,6 +106,11 @@
     <% } %>
   </head>
   <body>
+    <main>
+      <div id="single-spa-application:@shoppe/app-account"></div>
+    </main>
+    <footer id="single-spa-application:@shoppe/app-footer"></footer>
+
     <noscript> You need to enable JavaScript to run this app. </noscript>
     <script>
       System.import("@shoppe/root-config");

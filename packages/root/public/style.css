@@ -1,0 +1,28 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+  text-decoration: none;
+  -webkit-font-smoothing: antialiased !important;
+  -moz-osx-font-smoothing: grayscale !important;
+  list-style: none !important;
+  outline: none;
+}
+
+html {
+  font-size: 62.5%;
+}
+
+body,
+html {
+  background-color: #fff;
+  color: #000;
+}
+
+body {
+  font: normal 1.6rem "DM Sans", sans-serif;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-height: 100vh;
+}
