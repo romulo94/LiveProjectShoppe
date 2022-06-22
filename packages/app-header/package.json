@@ -1,5 +1,6 @@
 {
   "name": "@shoppe/app-header",
+  "version": "1.1.0",
   "scripts": {
     "start": "webpack serve --port 8100",
     "start:standalone": "webpack serve --env standalone",
@@ -12,7 +13,8 @@
     "test": "cross-env BABEL_ENV=test jest",
     "watch-tests": "cross-env BABEL_ENV=test jest --watch",
     "coverage": "cross-env BABEL_ENV=test jest --coverage",
-    "build:types": "tsc"
+    "build:types": "tsc",
+    "deploy": "sh deploy.sh"
   },
   "devDependencies": {
     "@babel/core": "^7.15.0",

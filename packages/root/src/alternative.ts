@@ -9,12 +9,7 @@ const apps = [
   {
     name: "@shoppe/app-footer",
     package: "@shoppe/app-footer",
-    activeWhen: (location) => !location.pathname.startsWith("/blank"),
-  },
-  {
-    name: "@shoppe/app-account",
-    package: "@shoppe/app-account",
-    activeWhen: ["/account"],
+    activeWhen: ["/"],
   },
 ];
 

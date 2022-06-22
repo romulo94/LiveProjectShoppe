@@ -7,6 +7,7 @@ import {
 import microfrontendLayout from "./microfrontend-layout.html";
 
 const routes = constructRoutes(microfrontendLayout);
+console.log("routes", routes);
 const applications = constructApplications({
   routes,
   loadApp({ name }) {

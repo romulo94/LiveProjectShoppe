@@ -4,36 +4,13 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>Root Config</title>
-
-    <!--
-    Remove this if you only support browsers that support async/await.
-    This is needed by babel to share largeish helper code for compiling async/await in older
-    browsers. More information at https://github.com/single-spa/create-single-spa/issues/112
-  -->
+    <title>Shoppe</title>
     <script src="https://cdn.jsdelivr.net/npm/regenerator-runtime@0.13.7/runtime.min.js"></script>
-
-    <!--
-    This CSP allows any SSL-enabled host and for arbitrary eval(), but you should limit these directives further to increase your app's security.
-    Learn more about CSP policies at https://content-security-policy.com/#directive
-  -->
-    <!-- <meta
+    <meta
       http-equiv="Content-Security-Policy"
-      content="default-src *; script-src  * 'unsafe-inline' 'unsafe-eval' blob: https: localhost:* http: localhost:*; connect-src https: localhost:* http: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src *"
-    /> -->
+      content="default-src 'self' https: localhost:*; script-src 'unsafe-inline' 'unsafe-eval' https: localhost:*; connect-src https: localhost:* ws://localhost:*; style-src 'unsafe-inline' https:; object-src 'none';"
+    />
     <meta name="importmap-type" content="systemjs-importmap" />
-    <!-- If you wish to turn off import-map-overrides for specific environments (prod), uncomment the line below -->
-    <!-- More info at https://github.com/joeldenning/import-map-overrides/blob/master/docs/configuration.md#domain-list -->
-    <!-- <meta name="import-map-overrides-domains" content="denylist:prod.example.com" /> -->
-
-    <!-- Shared dependencies go into this import map. Your shared dependencies must be of one of the following formats:
-
-    1. System.register (preferred when possible) - https://github.com/systemjs/systemjs/blob/master/docs/system-register.md
-    2. UMD - https://github.com/umdjs/umd
-    3. Global variable
-
-    More information about shared dependencies can be found at https://single-spa.js.org/docs/recommended-setup#sharing-with-import-maps.
-  -->
     <script type="systemjs-importmap">
       {
         "imports": {
@@ -45,12 +22,14 @@
         }
       }
     </script>
+      <link rel="preconnect" href="https://fonts.googleapis.com">
+      <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+      <link href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap" rel="stylesheet">
     <link
       rel="preload"
       href="https://cdn.jsdelivr.net/npm/single-spa@5.9.0/lib/system/single-spa.min.js"
       as="script"
     />
-
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap"
@@ -59,18 +38,66 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/icon?family=Material+Icons"
     />
+      <style>
+          * {
+              padding: 0;
+              margin: 0;
+              box-sizing: border-box;
+              text-decoration: none;
+              -webkit-font-smoothing: antialiased !important;
+              -moz-osx-font-smoothing: grayscale !important;
+              list-style: none !important;
+              outline: none;
+          }
 
-    <link rel="preconnect" href="https://fonts.googleapis.com" />
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-    <link
-      href="https://fonts.googleapis.com/css2?family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500;1,700&display=swap"
-      rel="stylesheet"
-    />
+          html {
+              font-size: 62.5%;
+          }
 
-    <link href="./style.css" rel="stylesheet" />
+          body,
+          html {
+              background-color: #fff;
+              color: #000;
+          }
 
-    <!-- Add your organization's prod import map URL to this script's src  -->
-    <!-- <script type="systemjs-importmap" src="/importmap.json"></script> -->
+          body {
+              font: normal 1.6rem 'DM Sans', sans-serif;
+              display: flex;
+              flex-direction: column;
+              justify-content: flex-start;
+              min-height: 100vh;
+          }
+
+          main {
+              display: flex;
+              flex: 1 1 auto;
+              width: 100%;
+              padding: 1.6rem;
+          }
+
+          @media only screen and (min-width: 1024px) {
+              main {
+                padding: 1.6rem 4.8rem;
+              }
+          }
+
+          main > div {
+              display: flex;
+              max-width: 124.8rem;
+              margin: 0 auto;
+              width: 100%;
+          }
+
+          h1 {
+              font-size: 2.5rem;
+          }
+
+          @media only screen and (min-width: 1024px) {
+              h1 {
+                font-size: 3.3rem;
+              }
+          }
+      </style>
 
     <% if (isLocal) { %>
     <script type="systemjs-importmap">
@@ -78,6 +105,7 @@
         "imports": {
           "@shoppe/root-config": "//localhost:9000/shoppe-root-config.js",
           "@shoppe/app-header": "//localhost:8100/shoppe-app-header.js",
+          "@shoppe/app-home": "//localhost:8000/shoppe-app-home.js",
           "@shoppe/app-footer": "//localhost:8110/shoppe-app-footer.js",
           "@shoppe/app-shop": "//localhost:8300/shoppe-app-shop.js",
           "@shoppe/app-account": "//localhost:8310/shoppe-app-account.js",
@@ -90,12 +118,6 @@
     </script>
     <% } %>
 
-    <!--
-    If you need to support Angular applications, uncomment the script tag below to ensure only one instance of ZoneJS is loaded
-    Learn more about why at https://single-spa.js.org/docs/ecosystem-angular/#zonejs
-  -->
-    <!-- <script src="https://cdn.jsdelivr.net/npm/zone.js@0.11.3/dist/zone.min.js"></script> -->
-
     <script src="https://cdn.jsdelivr.net/npm/import-map-overrides@2.2.0/dist/import-map-overrides.js"></script>
     <% if (isLocal) { %>
     <script src="https://cdn.jsdelivr.net/npm/systemjs@6.8.3/dist/system.js"></script>
@@ -106,11 +128,6 @@
     <% } %>
   </head>
   <body>
-    <main>
-      <div id="single-spa-application:@shoppe/app-account"></div>
-    </main>
-    <footer id="single-spa-application:@shoppe/app-footer"></footer>
-
     <noscript> You need to enable JavaScript to run this app. </noscript>
     <script>
       System.import("@shoppe/root-config");

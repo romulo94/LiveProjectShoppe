@@ -1,11 +1,12 @@
 import { Wrapper } from "./styles";
 import { IconProps } from "./types";
 
-export const Icon = ({ children, cursorPointer }: IconProps) => {
+export const Icon = ({ children, staticIcon, ...props }: IconProps) => {
   return (
     <Wrapper
-      as={cursorPointer ? "button" : "span"}
-      cursorPointer={cursorPointer}
+      as={staticIcon ? "span" : "button"}
+      staticIcon={staticIcon}
+      {...props}
     >
       {children}
     </Wrapper>

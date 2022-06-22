@@ -1,3 +1,6 @@
-export default function Root(props) {
-  return <section>{props.name} is mounted!</section>;
+//@ts-ignore
+import { Footer } from "@shoppe/util-ui";
+
+export default function Root() {
+  return <Footer />;
 }

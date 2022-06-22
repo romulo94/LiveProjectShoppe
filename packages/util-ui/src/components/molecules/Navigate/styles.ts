@@ -1,6 +1,8 @@
 import styled from "@emotion/styled";
 
 export const Container = styled.button`
+  display: flex;
+  align-items: center;
   background-color: #fff;
   position: relative;
   cursor: pointer;
@@ -16,5 +18,9 @@ export const Container = styled.button`
 
   &:focus {
     border: 0.2rem solid #000;
+  }
+
+  svg {
+    margin-right: 1rem;
   }
 `;

@@ -2,5 +2,7 @@ import { ReactNode } from "react";
 
 export type IconProps = {
   children: ReactNode;
-  cursorPointer?: boolean;
+  staticIcon?: boolean;
+  className?: string;
+  onClick?: () => void;
 };
