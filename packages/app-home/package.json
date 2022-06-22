@@ -1,6 +1,6 @@
 {
   "name": "@shoppe/app-home",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "scripts": {
     "start": "webpack serve --port 8000",
     "start:standalone": "webpack serve --env standalone",
