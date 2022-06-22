@@ -1,6 +1,6 @@
 {
   "name": "@shoppe/root-config",
-  "version": "1.2.0",
+  "version": "1.2.1",
   "scripts": {
     "start": "webpack serve --port 9000 --open --env isLocal",
     "lint": "eslint src --ext js,ts,tsx",
