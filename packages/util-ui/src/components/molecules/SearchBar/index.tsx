@@ -1,6 +1,6 @@
 import { SearchOutlined } from "@mui/icons-material";
 import { InputBase } from "@mui/material";
-import { Icon } from "../../atoms";
+import { Icon } from "components/atoms";
 import { Search, Wrapper } from "./styles";
 
 export const SearchBar = () => {

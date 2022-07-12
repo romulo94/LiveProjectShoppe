@@ -2,7 +2,8 @@
   "extends": "ts-config-single-spa",
   "compilerOptions": {
     "jsx": "react-jsx",
-    "declarationDir": "dist"
+    "declarationDir": "dist",
+    "baseUrl": "src"
   },
   "files": ["src/shoppe-util-ui.tsx"],
   "include": ["src/**/*"],

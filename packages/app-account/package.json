@@ -1,6 +1,6 @@
 {
   "name": "@shoppe/app-account",
-  "version": "1.1.0",
+  "version": "2.0.0",
   "scripts": {
     "start": "webpack serve --port 8310",
     "start:standalone": "webpack serve --env standalone",

@@ -3,6 +3,8 @@ import { combine } from "zustand/middleware";
 
 type CartProperties = {
   counter: number;
+  access_token?: string;
+  refresh_token?: string;
 };
 
 type CartMethods = {
